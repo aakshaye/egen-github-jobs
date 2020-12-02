@@ -2,9 +2,9 @@ import './JobTile.css';
 import React from 'react';
 import Moment from 'react-moment';
 
-function JobTile({companyLogo, type, position, companyName, location, createdTime}) {
+function JobTile({id, companyLogo, type, position, companyName, location, createdTime, handleJobClick}) {
         return (
-        <div className="jobTile">
+        <div className="jobTile" id={id} onClick={handleJobClick}>
             <img className="companyLogo" src={companyLogo} alt="logo"/>
             <div className="timeWithType">
                 <span className="timePosted">

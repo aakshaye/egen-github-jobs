@@ -1,6 +1,6 @@
 /* Job Tile */
 .jobTile {
-    margin-top: 30px;
+    margin: 30px;
 
     width: 250px;
     height: 115px;
@@ -11,6 +11,7 @@
     padding: 25px;
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 .jobTile .companyLogo {
     width: 36px;
