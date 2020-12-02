@@ -59,7 +59,7 @@ class Landing extends React.Component {
     handleJobClick(event) {
         event.stopPropagation();
         const clickedJobID = event.target.id;
-        const fetchURL = `/positions/${clickedJobID}.json?markdown=true`; // template string
+        const fetchURL = `https://jobs.github.com/positions/${clickedJobID}.json?markdown=true`; // template string
         console.log(fetchURL, clickedJobID);
         fetch(fetchURL)
             .then(res => res.json())

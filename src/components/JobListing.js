@@ -22,7 +22,7 @@ class JobListing extends React.Component {
         }
     }
     getJobList() {
-        fetch("/positions.json?"+this.props.query)
+        fetch("https://jobs.github.com/positions.json?"+this.props.query)
             .then(res => res.json())
             .then(
                 (result) => {
