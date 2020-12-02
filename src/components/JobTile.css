@@ -1,0 +1,59 @@
+/* Job Tile */
+.jobTile {
+    margin-top: 30px;
+
+    width: 250px;
+    height: 115px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 25px;
+    border-radius: 5px;
+    position: relative;
+}
+.jobTile .companyLogo {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: -18px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: #FFF;
+}
+.jobTile .timeWithType {
+    color: #777777;
+    font-size: 15px;
+    padding: 5px 0 ;
+}
+
+.jobTile .timeWithType .timePosted {
+    margin-right: 10px;
+}
+.jobTile .timeWithType .jobType {
+    margin-left: 10px;
+}
+.jobTile .timeWithType .dot {
+    font-weight: 900;
+}
+
+.jobTile .position {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+    min-height: 20px;
+}
+
+.jobTile .companyName {
+    color: #777777;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.jobTile .locations {
+    color: #5865E0;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px 0;
+}

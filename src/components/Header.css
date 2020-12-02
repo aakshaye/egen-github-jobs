@@ -1,0 +1,12 @@
+.heading {
+    height: 130px;  
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 74px;
+    align-content: center;
+    align-items: center;
+}
+.siteName {
+    font-weight: 600;
+    font-size: 24px;
+}

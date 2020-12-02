@@ -1,0 +1,53 @@
+.filter-form {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.titleCompanyFilter {
+    width: 565px;
+    height: 50px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #999999; 
+}
+.locationFilter {
+    width: 250px;
+    height: 50px;
+    border-top: 1px;    
+    border-bottom: 1px;   
+    border-color: #999999; 
+}
+.fullTimeFilterText {
+    font-size: 14px;
+    font-weight: 500;
+}
+.searchButton {
+    width: 70px;
+    height: 30px;
+    color: #FFF;
+    font-weight: 600;
+    margin: 0 15px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.searchButton:active {
+    box-shadow: 0 3px 0 #9b279b;
+    top: 3px;
+  }
+.searchForm {
+    position: relative;
+    top: -28px;
+    margin-bottom: -55px;
+}
+.filterAndSearchButton {    
+    width: 230px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
