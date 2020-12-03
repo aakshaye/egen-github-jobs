@@ -1,23 +1,28 @@
 import './JobDetail.css';
 import React from 'react';
 import Moment from 'react-moment';
+import ReactMarkdown from 'react-markdown'
 
 function JobDetail({companyLogo, type, position, companyName, location, createdTime, description, companyURL, howToApply}) {
         return (
         <div className="jobDetail">
             <div className="jobHeading">
-                <img className="companyLogo" src={companyLogo} alt="logo"/>
+                <div className="companyLogoImage">
+                    <img className="companyLogo" src={companyLogo} alt="logo"/>
+                </div>
                 <div className="companyName">
-                    {companyName}
+                    <h4>{companyName}</h4>
                     <a href={companyURL} className="companyURL">
                         {companyURL}
                     </a>
                 </div>
-                <button className="companySite">
-                    <a className="redirectLink" href={companyURL}>
-                        Company Site
-                    </a>
-                </button>
+                <div className="companySiteButton">
+                    <button className="companySite">
+                        <a className="redirectLink" href={companyURL}>
+                            Company Site
+                        </a>
+                    </button>
+                </div>
             </div>
             <div className="jobDetails">
                 <div className="basicInfo">
@@ -44,12 +49,12 @@ function JobDetail({companyLogo, type, position, companyName, location, createdT
                 </div>
                 
                 <div className="description">
-                    {description}
+                    <ReactMarkdown>{description}</ReactMarkdown>
                 </div>
             </div>
             <div className="howToApply">
-                How to Apply<br/>
-                {howToApply}
+                <h3>How To Apply</h3>
+                <p>{howToApply}</p>
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ class JobListing extends React.Component {
     }
     // get jobs when component mounts
     componentDidMount() {
-        this.getJobList();
+        this.getJobList();        
     }
     // get jobs when props change
     componentDidUpdate(prevProps) {
@@ -21,15 +21,15 @@ class JobListing extends React.Component {
             this.getJobList();
         }
     }
+    // get jobs based on query params prop
     getJobList() {
         fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?"+this.props.query)
             .then(res => res.json())
             .then(
                 (result) => {
-                    const jobs = result;
                     this.setState({
                         isLoaded: true,
-                        jobs
+                        jobs: [...this.state.jobs, ...result] // append to jobs object
                     });
                 },
             )
@@ -60,7 +60,7 @@ class JobListing extends React.Component {
             )
         });
         return (
-            <div className="jobListing light-gray">
+            <div id="jobList" className="jobListing light-gray">
                 {jobListing}
             </div>
         )

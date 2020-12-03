@@ -6,7 +6,9 @@ class SearchForm extends React.Component {
         return (
             <div className="searchForm">
                 <form className="filter-form" onSubmit={this.props.handleSubmit}>
-                    <input type="text" className="titleCompanyFilter" name="titleSkillText" onChange={this.props.handleChange} value={this.props.titleSkillText} placeholder="Filter by title or company name..."/>                    
+                    <i className="fa fa-search"></i>
+                    <input type="text" className="titleCompanyFilter" name="titleSkillText" onChange={this.props.handleChange} value={this.props.titleSkillText} placeholder="Filter by title, companies, expertise..."/>                    
+                    <i className="fa fa-map-marker"></i>
                     <input type="text" className="locationFilter" name="locationText" onChange={this.props.handleChange} value={this.props.locationText} placeholder="Filter by location..."/>
                     <span className="filterAndSearchButton">
                         <label className="fullTimeCheckbox">

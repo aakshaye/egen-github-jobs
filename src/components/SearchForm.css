@@ -5,19 +5,22 @@
     justify-content: center;
 }
 .titleCompanyFilter {
-    width: 565px;
+    width: 535px;
     height: 50px;
+    padding-left: 30px;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-color: #999999; 
 }
+
 .locationFilter {
-    width: 250px;
+    width: 225px;
     height: 50px;
     border-top: 1px;    
     border-bottom: 1px;   
     border-color: #999999; 
+    padding-left: 25px;
 }
 .fullTimeFilterText {
     font-size: 14px;
@@ -29,8 +32,9 @@
     color: #FFF;
     font-weight: 600;
     margin: 0 15px;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 12px;
+    border: none;
 }
 .searchButton:active {
     box-shadow: 0 3px 0 #9b279b;
@@ -39,7 +43,7 @@
 .searchForm {
     position: relative;
     top: -28px;
-    margin-bottom: -55px;
+    margin: 0 30px -55px 30px;
 }
 .filterAndSearchButton {    
     width: 230px;
@@ -50,4 +54,79 @@
     background-color: #FFF;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+.fa-search::before {
+    color: #5865E0;
+    position: relative;
+    left: 25px;
+    margin-left: -18px;
+}
+.fa-map-marker::before {
+    color: #5865E0;
+    position: relative;
+    left: 25px;
+    margin-left: -18px;
+}
+
+
+/*Media queries*/
+
+@media (max-width: 1000px) {
+    .App-header {
+        border-bottom-left-radius: 59px;
+    }
+    .searchForm {
+        margin: 0 44px -55px 44px;
+    }
+    .titleCompanyFilter {
+        width: 270px;
+    }    
+    .locationFilter {
+        width: 175px;
+    }
+    .fullTimeFilterText {
+        font-size: 12px;
+    }
+    .filterAndSearchButton {
+        width: 220px;
+    }
+}
+@media (max-width: 400px) {
+    .App-header {
+        border-bottom-left-radius: 0px;
+    }
+    .titleCompanyFilter {
+        width: 270px;
+        padding-left: 20px;
+    }    
+    .titleCompanyFilter::-webkit-input-placeholder{
+        text-overflow:ellipsis;
+    }
+    .locationFilter {
+        width: 175px;
+        display: none;
+    }
+    .fullTimeFilterText {
+        font-size: 12px;
+        display: none;
+    }
+    .filterAndSearchButton {
+        width: 220px;
+    }
+    .fa-search::before {
+        left: 264px;
+        bottom: 2px;
+        color: #FFF;
+        font-size: 17px;
+    }    
+    .fa-map-marker::before {
+        display: none;
+    }    
+    .fullTimeCheckbox {
+        display: none;
+    }
+    .searchButton {
+        width: 30px;
+        font-size: 0;
+    }
 }

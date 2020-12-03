@@ -35,7 +35,7 @@
     text-decoration: none;
 }
 .jobHeading .companySite {
-    margin-right: 20px;
+    margin-left: 36px;
     font-size: 12px;
     font-weight: 700;
     padding: 10px;
@@ -80,18 +80,21 @@
     justify-content: space-around;
 }
 .jobInfo {
-    margin: 10px 110px 0 6px;
+    margin: 10px 64px 0 0px;
 }
 .jobDetails .basicInfo .applyButton {
     font-weight: 700;
     background-color: #5865E0;
     font-size: 12px;
-    padding: 5px 15px;
+    padding: 7px 19px;
+    border: none;
+    border-radius: 3px;
     
 }
 .basicInfo .applyButton .redirectLink {
     text-decoration: none;
     color: #FFF;
+    font-size: 11px;
 }
 
 .jobDetails .description {
@@ -112,11 +115,16 @@
     padding: 10px 0;
 }
 .howToApply {    
-    width: 470px;
+    width: 427px;
     margin: 20px 0;
     background-color: #5865E0;
     font-size: 10px;
-    padding: 5px 15px;
+    padding: 5px 37px;
     color: #FFF;
     font-weight: 700;
 }
+@media (max-width: 400px) {
+    .jobHeading {
+        flex-direction: column;
+    }
+}    
