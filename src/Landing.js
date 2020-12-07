@@ -179,6 +179,7 @@ class Landing extends React.Component {
                         />
                         <JobListing 
                             query={this.state.query}
+                            page={this.state.page}
                             handleJobClick={this.handleJobClick}
                             darkMode={this.state.darkMode}
                         />
@@ -195,6 +196,7 @@ class Landing extends React.Component {
                         description={currentJob.description}
                         companyURL={currentJob.company_url}
                         howToApply={currentJob.how_to_apply}
+                        darkMode={this.state.darkMode}
                     />
                 }
             </div>

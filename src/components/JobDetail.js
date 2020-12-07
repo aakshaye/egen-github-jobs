@@ -3,9 +3,9 @@ import React from 'react';
 import Moment from 'react-moment';
 import ReactMarkdown from 'react-markdown'
 
-function JobDetail({companyLogo, type, position, companyName, location, createdTime, description, companyURL, howToApply}) {
+function JobDetail({companyLogo, type, position, companyName, location, createdTime, description, companyURL, howToApply, darkMode}) {
         return (
-        <div className="jobDetail">
+        <div className={`jobDetail ${darkMode === true ? "darkMode" : ""}`}>
             <div className="jobHeading">
                 <div className="companyLogoImage">
                     <img className="companyLogo" src={companyLogo} alt="logo"/>

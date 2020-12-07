@@ -16,13 +16,13 @@ class JobListing extends React.Component {
         this.getJobList();        
     }
     // get jobs when props change
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps) {        
         if (prevProps.query !== this.props.query) {
             this.getJobList();
         }
     }
     // get jobs based on query params prop
-    getJobList() {
+    getJobList(clearJobs) {
         // CORS workaround in API call
         const proxyURL = 'https://protected-beach-09626.herokuapp.com/'; // self-created heroku domain
         const githubJobsAPI = 'https://jobs.github.com/';
@@ -36,7 +36,7 @@ class JobListing extends React.Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        jobs: [...this.state.jobs, ...result] // append to jobs object
+                        jobs: [...result] // append to jobs object
                     });
                 },
             )
