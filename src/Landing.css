@@ -21,16 +21,21 @@
   /*text-align: center;*/
   font-family: 'Roboto', sans-serif;
   background-color: #F5F6F8;
-
-  @media(prefers-color-scheme:dark) {
-    background-color: #131822;
-  }
 }
-
+.Landing.darkMode {
+  background-color: #000;
+}
 .App-header {
   max-height: 100vh;
   display: flex;
   flex-direction: column;
   color: white;
   border-bottom-left-radius: 85px;
+}
+
+@media(prefers-color-scheme:dark) {
+  .Landing.dark-mode {
+    background-color: #131822;
+  }
+  
 }

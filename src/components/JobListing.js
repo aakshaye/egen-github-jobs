@@ -23,7 +23,8 @@ class JobListing extends React.Component {
     }
     // get jobs based on query params prop
     getJobList() {
-        fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?"+this.props.query)
+        //fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?"+this.props.query)
+        fetch("/positions.json?"+this.props.query)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -55,12 +56,13 @@ class JobListing extends React.Component {
                     position={title}
                     type={type}
                     createdTime={created_at}
+                    darkMode={this.props.darkMode}
                     handleJobClick={this.props.handleJobClick}
                 />
             )
         });
         return (
-            <div id="jobList" className="jobListing light-gray">
+            <div id="jobList" className="jobListing">
                 {jobListing}
             </div>
         )

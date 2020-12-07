@@ -7,12 +7,17 @@
     background-color: #FFF;
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
+    border: 1px solid #FFF;
     padding: 25px;
     border-radius: 5px;
     position: relative;
     cursor: pointer;
 }
+.jobTile.darkMode {
+    background-color: #131822;    
+    border: 1px solid #000;
+}
+
 .jobTile .companyLogo {
     width: 36px;
     height: 36px;
@@ -44,6 +49,9 @@
     font-weight: bold;
     padding: 5px 0;
     min-height: 20px;
+}
+.jobTile.darkMode .position {
+    color: #FFF;
 }
 
 .jobTile .companyName {

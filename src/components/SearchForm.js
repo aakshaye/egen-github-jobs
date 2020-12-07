@@ -4,7 +4,7 @@ import React from "react";
 class SearchForm extends React.Component {
     render() {
         return (
-            <div className="searchForm">
+            <div className={`searchForm ${this.props.darkMode === true ? "darkMode" : ""}`}>
                 <form className="filter-form" onSubmit={this.props.handleSubmit}>
                     <i className="fa fa-search"></i>
                     <input type="text" className="titleCompanyFilter" name="titleSkillText" onChange={this.props.handleChange} value={this.props.titleSkillText} placeholder="Filter by title, companies, expertise..."/>                    

@@ -91,10 +91,11 @@ class Landing extends React.Component {
         });*/
     }
     handleJobClick(event) {
-        event.stopPropagation();
-        const clickedJobID = event.target.id;
+        event.preventDefault();
+        const clickedJobID = event.currentTarget.id;
         // CORS workaround in API call
-        const fetchURL = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${clickedJobID}.json?markdown=true`; // template string
+        /*const fetchURL = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${clickedJobID}.json?markdown=true`; // template string*/
+        const fetchURL = `positions/${clickedJobID}.json?markdown=true`; // template string
         
         fetch(fetchURL)
             .then(res => res.json())
@@ -158,7 +159,7 @@ class Landing extends React.Component {
     render() {
         const currentJob = this.state.currentJob;
         return (
-            <div id="Landing" className="Landing">    
+            <div id="Landing" className={`Landing ${this.state.darkMode === true ? "darkMode" : ""}` }>    
                 <header className="App-header purple">
                     <Header 
                         handleDarkModeToggle={this.handleDarkModeToggle}
@@ -168,12 +169,14 @@ class Landing extends React.Component {
                     <div>
                         <SearchForm
                             locationText={this.state.locationText}
+                            darkMode={this.state.darkMode}
                             handleChange={this.handleChange}
                             handleSubmit={this.handleSubmit}
                         />
                         <JobListing 
-                            query = {this.state.query}
+                            query={this.state.query}
                             handleJobClick={this.handleJobClick}
+                            darkMode={this.state.darkMode}
                         />
                     </div>    
                 }

@@ -4,6 +4,9 @@
     align-items: center;
     justify-content: center;
 }
+.searchForm.darkMode .titleCompanyFilter {
+    background-color: #131822;
+}
 .titleCompanyFilter {
     width: 535px;
     height: 50px;
@@ -22,9 +25,15 @@
     border-color: #999999; 
     padding-left: 25px;
 }
+.searchForm.darkMode .locationFilter {
+    background-color: #131822;
+}
 .fullTimeFilterText {
     font-size: 14px;
     font-weight: 500;
+}
+.searchForm.darkMode .fullTimeFilterText {
+    color: #FFF;
 }
 .searchButton {
     width: 70px;
@@ -54,6 +63,12 @@
     background-color: #FFF;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+.searchForm.darkMode .filterAndSearchButton {
+    background-color: #131822;
+}
+.searchForm.darkMode  .fullTimeFilterCheckbox {
+    background-color: #131822;
 }
 .fa-search::before {
     color: #5865E0;
