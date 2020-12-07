@@ -23,9 +23,15 @@ class JobListing extends React.Component {
     }
     // get jobs based on query params prop
     getJobList() {
-        //fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?"+this.props.query)
-        fetch("/positions.json?"+this.props.query)
-            .then(res => res.json())
+        // CORS workaround in API call
+        const proxyURL = 'https://protected-beach-09626.herokuapp.com/'; // self-created heroku domain
+        const githubJobsAPI = 'https://jobs.github.com/';
+        const queryParams = 'positions.json?' + this.props.query;
+
+        fetch(`${proxyURL}${githubJobsAPI}${queryParams}`)        
+            .then(res => res.json(), {
+                mode: 'cors',
+            })
             .then(
                 (result) => {
                     this.setState({

@@ -93,9 +93,13 @@ class Landing extends React.Component {
     handleJobClick(event) {
         event.preventDefault();
         const clickedJobID = event.currentTarget.id;
-        // CORS workaround in API call
-        /*const fetchURL = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${clickedJobID}.json?markdown=true`; // template string*/
-        const fetchURL = `positions/${clickedJobID}.json?markdown=true`; // template string
+        // CORS workaround in API 
+        const proxyURL = 'https://protected-beach-09626.herokuapp.com/'; // self-created heroku domain
+        const githubJobsAPI = 'https://jobs.github.com/';
+        const queryParams = `positions/${clickedJobID}.json?markdown=true`;
+
+        const fetchURL = `${proxyURL}${githubJobsAPI}${queryParams}`; // template string
+        /*const fetchURL = `positions/${clickedJobID}.json?markdown=true`; // template string*/
         
         fetch(fetchURL)
             .then(res => res.json())
