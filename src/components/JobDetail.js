@@ -11,14 +11,14 @@ function JobDetail({companyLogo, type, position, companyName, location, createdT
                     <img className="companyLogo" src={companyLogo} alt="logo"/>
                 </div>
                 <div className="companyName">
-                    <h4>{companyName}</h4>
+                    <div className="compName">{companyName}</div>
                     <a href={companyURL} className="companyURL">
                         {companyURL}
                     </a>
                 </div>
                 <div className="companySiteButton">
                     <button className="companySite">
-                        <a className="redirectLink" href={companyURL}>
+                        <a className="redirectLink" href={`//${companyURL}`} target="_blank">
                             Company Site
                         </a>
                     </button>
@@ -54,7 +54,7 @@ function JobDetail({companyLogo, type, position, companyName, location, createdT
             </div>
             <div className="howToApply">
                 <h3>How To Apply</h3>
-                <p>{howToApply}</p>
+                <p><ReactMarkdown>{howToApply}</ReactMarkdown></p>
             </div>
         </div>
     );

@@ -5,7 +5,9 @@ import Toggle from './Toggle';
 function Header({handleDarkModeToggle}) {
     return (
         <div className="heading">
-            <div className="siteName">devjobs</div>
+            <div className="siteName">
+                <a href="/" className="home">devjobs</a>
+            </div>
             <Toggle 
                 handleDarkModeToggle={handleDarkModeToggle}
             />

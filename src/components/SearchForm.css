@@ -86,7 +86,7 @@
 
 /*Media queries*/
 
-@media (max-width: 1000px) {
+@media all and (max-width: 1024px) and (min-width: 515px)  {
     .App-header {
         border-bottom-left-radius: 59px;
     }
@@ -106,7 +106,7 @@
         width: 220px;
     }
 }
-@media (max-width: 400px) {
+@media all and (max-width: 512px) and (min-width: 300px)  {
     .App-header {
         border-bottom-left-radius: 0px;
     }
@@ -129,7 +129,7 @@
         width: 220px;
     }
     .fa-search::before {
-        left: 264px;
+        left: 270px;
         bottom: 2px;
         color: #FFF;
         font-size: 17px;
@@ -143,5 +143,9 @@
     .searchButton {
         width: 30px;
         font-size: 0;
+    }
+    .searchForm {
+        width: 300px;
+        margin: 0 20px -55px 53px;
     }
 }

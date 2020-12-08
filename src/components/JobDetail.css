@@ -10,25 +10,32 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 20px;
     background-color: #FFF;
-    width: 500px;
+    width: 600px;
+    position: relative;
+    top: -28px;
+    /*margin: 0 30px -55px 30px;*/
 }
 .jobDetail.darkMode .jobHeading {   
     background-color: #131822;
+}
+.jobHeading .companyLogoImage {
+    width: 90px;
+    margin: 10px;
 }
 .jobHeading .companyLogo {
     width: 90px;
     height: 90px;
 }
 .jobHeading .companyName {
+    width: 200px;
     font-weight: 700;
     color: #000;
     display: flex;
     flex-direction: column;
-    padding: 0 90px 0 30px;
+    padding: 0 110px 0 30px;
 
 }
 .jobDetail.darkMode .companyName {   
@@ -41,8 +48,10 @@
     padding: 5px 0 ;
     text-decoration: none;
 }
+.jobHeading .companySiteButton {
+    width: 100px;
+}
 .jobHeading .companySite {
-    margin-left: 36px;
     font-size: 12px;
     font-weight: 700;
     padding: 10px;
@@ -52,11 +61,14 @@
 .jobHeading .companySite .redirectLink {
     text-decoration: none;
 }
+.jobHeading .companySite .redirectLink:visited {
+    text-decoration: none;
+}
 .jobDetails {
     display: flex;
     flex-direction: column;
     background-color: #FFF;
-    width: 500px;
+    width: 600px;
 }
 .jobDetail.darkMode .jobDetails {   
     background-color: #131822;
@@ -90,16 +102,16 @@
 .jobDetails .basicInfo {
     display: flex; 
     align-items: center; 
-    justify-content: space-around;
 }
 .jobInfo {
-    margin: 10px 64px 0 0px;
+    margin: 10px 16px 0 35px;
+    width: 400px;
 }
 .jobDetails .basicInfo .applyButton {
     font-weight: 700;
     background-color: #5865E0;
     font-size: 12px;
-    padding: 7px 19px;
+    padding: 8px 19px;
     border: none;
     border-radius: 3px;
     
@@ -107,9 +119,11 @@
 .basicInfo .applyButton .redirectLink {
     text-decoration: none;
     color: #FFF;
-    font-size: 11px;
+    font-size: 12px;
 }
-
+.basicInfo .applyButton .redirectLink:visited {
+    text-decoration: none;
+}    
 .jobDetails .description {
     font-size: 12px;
     color: #777777;
@@ -128,16 +142,69 @@
     padding: 10px 0;
 }
 .howToApply {    
-    width: 427px;
+    width: 527px;
     margin: 20px 0;
     background-color: #5865E0;
     font-size: 10px;
     padding: 5px 37px;
     color: #FFF;
     font-weight: 700;
+    overflow-wrap: break-word;
 }
-@media (max-width: 400px) {
+
+/*Media queries*/
+@media all and (max-width: 1024px) and (min-width: 515px)  {
+}
+
+@media all and (max-width: 512px) and (min-width: 300px)  {
+    .jobDetails .basicInfo {
+        flex-direction: column;
+        align-items: unset;
+    }
     .jobHeading {
         flex-direction: column;
+        width: 360px;
+    }
+    .jobHeading .companyLogo {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: -18px;
+        left: 155px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        background-color: #fff;
+    }
+    .jobHeading .companyName{
+        align-items: center;
+        padding: 20px 0;
+    }    
+    .jobHeading .companySiteButton {
+        margin: 0 0 20px 0;
+    }
+    .jobDetails {
+        width: 360px;
+    }
+    .jobInfo {
+        margin: 10px 20px;
+        padding: 0 2px;
+        width: 320px;
+    }
+    .jobDetails .timeWithType {
+        font-size: 14px;
+    }
+    .jobDetails .position {
+        font-size: 16px;
+    }
+    .jobDetails .basicInfo .applyButton {
+        padding: 10px 19px;
+        margin: 0 20px;
+    }
+    .jobDetails .description {
+        padding: 10px 25px;
+    }
+    .howToApply {
+        width: 320px;
+        padding: 5px 20px;
     }
 }    

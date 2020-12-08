@@ -194,7 +194,7 @@ class Landing extends React.Component {
                         type={currentJob.type}
                         createdTime={currentJob.created_at}
                         description={currentJob.description}
-                        companyURL={currentJob.company_url}
+                        companyURL={new URL(currentJob.company_url).hostname}
                         howToApply={currentJob.how_to_apply}
                         darkMode={this.state.darkMode}
                     />
