@@ -26,6 +26,7 @@ class Landing extends React.Component {
         this.handleJobClick = this.handleJobClick.bind(this);
         this.handleDarkModeToggle = this.handleDarkModeToggle.bind(this);
         this.setLocation = this.setLocation.bind(this);
+        this.handleEnterPress = this.handleEnterPress(this);
     }
     
     // lifted up from SearchForm
@@ -44,7 +45,12 @@ class Landing extends React.Component {
     // lifted up from SearchForm
     handleSubmit(event) {
         event.preventDefault();
-        this.buildQueryString();
+        // search will always return 1st page of results based on query made
+        this.setState({
+            page: 1
+        }, () => {            
+            this.buildQueryString();
+        });
     }
     buildQueryString() {
         // Get query parameters
@@ -136,6 +142,11 @@ class Landing extends React.Component {
     componentWillUnmount() {
         document.removeEventListener('scroll', this.trackScrolling);
     }
+    handleEnterPress(event) {
+        if (event.charCode === 13) {
+            event.preventDefault();
+        }
+    }
     isBottom(ele) {
         return ele.getBoundingClientRect().bottom <= window.innerHeight; // reached bottom of page
     }
@@ -149,7 +160,7 @@ class Landing extends React.Component {
             });
             this.buildQueryString()
         }
-      };
+    };
     /* This function takes query parameter object and creates an appropriate query string */
     getQueryString(obj) {
         const queryParams = [];
@@ -170,12 +181,13 @@ class Landing extends React.Component {
                     />
                 </header>
                 {!this.state.showJobDetails && 
-                    <div>
+                    <div className="searchAndListing">
                         <SearchForm
                             locationText={this.state.locationText}
                             darkMode={this.state.darkMode}
                             handleChange={this.handleChange}
                             handleSubmit={this.handleSubmit}
+                            handleEnterPress={this.handleEnterPress}
                         />
                         <JobListing 
                             query={this.state.query}

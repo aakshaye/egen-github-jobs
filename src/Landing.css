@@ -20,7 +20,7 @@
 .Landing {
   /*text-align: center;*/
   font-family: 'Roboto', sans-serif;
-  background-color: #F5F6F8;
+  background-color: #F5F6F8;  
 }
 .Landing.darkMode {
   background-color: #000;

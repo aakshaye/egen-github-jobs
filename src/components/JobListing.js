@@ -18,15 +18,21 @@ class JobListing extends React.Component {
     // get jobs when props change
     componentDidUpdate(prevProps) {        
         if (prevProps.query !== this.props.query) {
-            this.getJobList();
+            if (this.props.page <= 1) {
+                // clear jobs object when getting 1st page of results
+                this.getJobList(true);
+            } else {
+                // lazy loading, append subsequent pages to existing jobs object
+                this.getJobList();
+            }
         }
     }
     // get jobs based on query params prop
     getJobList(clearJobs) {
         // CORS workaround in API call
         const proxyURL = 'https://protected-beach-09626.herokuapp.com/'; // self-created heroku domain
-        const githubJobsAPI = 'https://jobs.github.com/';
-        const queryParams = 'positions.json?' + this.props.query;
+        const githubJobsAPI = 'https://jobs.github.com/positions.json';
+        const queryParams = `?${this.props.query}`;
 
         fetch(`${proxyURL}${githubJobsAPI}${queryParams}`)        
             .then(res => res.json(), {
@@ -34,10 +40,17 @@ class JobListing extends React.Component {
             })
             .then(
                 (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        jobs: [...result] // append to jobs object
-                    });
+                    if (clearJobs === true) {
+                        this.setState({
+                            isLoaded: true,
+                            jobs: [...result] // clear jobs object
+                        });
+                    } else {
+                        this.setState({
+                            isLoaded: true,
+                            jobs: [...this.state.jobs, ...result] // append to jobs object
+                        });
+                    }
                 },
             )
             .catch(
