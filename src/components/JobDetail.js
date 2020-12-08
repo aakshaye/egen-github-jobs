@@ -3,7 +3,7 @@ import React from 'react';
 import Moment from 'react-moment';
 import ReactMarkdown from 'react-markdown'
 
-function JobDetail({companyLogo, type, position, companyName, location, createdTime, description, companyURL, howToApply, darkMode}) {
+function JobDetail({companyLogo, type, position, companyName, location, createdTime, description, companyURL, jobURL, howToApply, darkMode}) {
         return (
         <div className={`jobDetail ${darkMode === true ? "darkMode" : ""}`}>
             <div className="jobHeading">
@@ -17,7 +17,7 @@ function JobDetail({companyLogo, type, position, companyName, location, createdT
                     </a>
                 </div>
                 <div className="companySiteButton">
-                    <button className="companySite">
+                    <button className="companySite" type="button">
                         <a className="redirectLink" href={`//${companyURL}`} target="_blank">
                             Company Site
                         </a>
@@ -41,8 +41,8 @@ function JobDetail({companyLogo, type, position, companyName, location, createdT
                             {location}
                         </div>   
                     </div>
-                    <button className="applyButton">
-                        <a className="redirectLink" href={companyURL}>
+                    <button className="applyButton" type="button">
+                        <a className="redirectLink" href={`${jobURL}`} target="_blank">
                             Apply Now
                         </a>
                     </button>                 
